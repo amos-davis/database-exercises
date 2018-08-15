@@ -24,19 +24,21 @@ AND last_name NOT LIKE '%qu%'
 GROUP BY last_name
 
 
-SELECT COUNT(last_name)
+SELECT last_name, COUNT(*)
 FROM employees
 WHERE last_name LIKE '%q%'
 AND last_name NOT LIKE '%qu%'
-ORDER BY last_name;
+GROUP BY last_name
+ORDER BY COUNT(*);
 
 
 
-SELECT gender, COUNT(*)
+SELECT COUNT(*), gender
 FROM employees
 WHERE first_name = 'Irena'
   OR first_name = 'Vidya'
   OR first_name = 'Maya'
-    GROUP BY gender;
+    GROUP BY gender
+    ORDER BY COUNT(*);
 
 
